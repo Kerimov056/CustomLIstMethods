@@ -136,11 +136,18 @@ public class MyList<T>:IEnumerable<T>
                     }
                 }
             }
-            //Array.Sort(array, 0, Count);
         }
         if (Count == 1)
         {
             Console.WriteLine(array[0]);
+        }
+    }
+
+    public void AddRange(IEnumerable<T> values)
+    {
+        foreach (T item in values)
+        {
+            Add(item);
         }
     }
     public IEnumerator<T> GetEnumerator()
