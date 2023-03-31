@@ -150,6 +150,31 @@ public class MyList<T>:IEnumerable<T>
             Add(item);
         }
     }
+
+    public int IndexOf(T obj, int index)  //2ci ovolad'i
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            if (obj.Equals(array[i]) && i == index)
+            {
+                return 1;
+            }
+        }
+        return -1;
+    }
+
+    public bool Remove(T obj)
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            if (obj.Equals(array[i]))
+            {
+                array[i] = default;
+                return true;
+            }
+        }
+        return false;
+    }
     public IEnumerator<T> GetEnumerator()
     {
         for (int i = 0; i < Count; i++)
