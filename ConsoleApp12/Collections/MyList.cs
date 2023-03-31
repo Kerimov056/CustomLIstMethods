@@ -88,18 +88,6 @@ public class MyList<T>:IEnumerable<T>
         return default;
     }
 
-    public IEnumerator<T> GetEnumerator()
-    {
-        for (int i = 0; i < Count; i++)
-        {
-            yield return array[i];
-        }
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
 
     public void Clear()
     {
@@ -128,7 +116,7 @@ public class MyList<T>:IEnumerable<T>
         }
     }
 
-    public void Sort()
+    public void Sort()    //IComparer<T> comparer
     {
         if (Count == 0)
         {
@@ -136,23 +124,35 @@ public class MyList<T>:IEnumerable<T>
         }                            //1,2,3,4
         if (Count > 1)
         {
-            //for (int i = 0; i < Count; i++)
-            //{
-            //    for (int j = i + 1; j < Count; j++)
-            //    {
-            //        if (array.Equals(array[i] > array[j]))
-            //        {
-            //            T temp = array[i];
-            //            array[i] = array[j];
-            //            array[j] = temp;
-            //        }
-            //    }
-            //}
-             Array.Sort(array, 0, Count);
+            for (int i = 0; i < Count; i++)
+            {
+                for (int j = i + 1; j < Count; j++)
+                {
+                    if (Comparer<T>.Default.Compare(array[i], array[j]) > 0)
+                    {
+                        T temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            //Array.Sort(array, 0, Count);
         }
         if (Count == 1)
         {
             Console.WriteLine(array[0]);
         }
+    }
+    public IEnumerator<T> GetEnumerator()
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            yield return array[i];
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
