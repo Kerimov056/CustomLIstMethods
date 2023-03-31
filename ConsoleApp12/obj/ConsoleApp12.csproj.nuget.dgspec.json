@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ulvisk\\source\\repos\\ConsoleApp12\\ConsoleApp12\\ConsoleApp12.csproj": {}
+    "C:\\Users\\Legion\\Desktop\\work2\\CustomLIstMethods\\ConsoleApp12\\ConsoleApp12.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ulvisk\\source\\repos\\ConsoleApp12\\ConsoleApp12\\ConsoleApp12.csproj": {
+    "C:\\Users\\Legion\\Desktop\\work2\\CustomLIstMethods\\ConsoleApp12\\ConsoleApp12.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ulvisk\\source\\repos\\ConsoleApp12\\ConsoleApp12\\ConsoleApp12.csproj",
+        "projectUniqueName": "C:\\Users\\Legion\\Desktop\\work2\\CustomLIstMethods\\ConsoleApp12\\ConsoleApp12.csproj",
         "projectName": "ConsoleApp12",
-        "projectPath": "C:\\Users\\ulvisk\\source\\repos\\ConsoleApp12\\ConsoleApp12\\ConsoleApp12.csproj",
-        "packagesPath": "C:\\Users\\ulvisk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ulvisk\\source\\repos\\ConsoleApp12\\ConsoleApp12\\obj\\",
+        "projectPath": "C:\\Users\\Legion\\Desktop\\work2\\CustomLIstMethods\\ConsoleApp12\\ConsoleApp12.csproj",
+        "packagesPath": "C:\\Users\\Legion\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Legion\\Desktop\\work2\\CustomLIstMethods\\ConsoleApp12\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ulvisk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Legion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -61,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

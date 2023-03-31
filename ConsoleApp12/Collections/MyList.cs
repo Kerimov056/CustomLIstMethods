@@ -33,7 +33,7 @@ public class MyList<T>:IEnumerable<T>
     public T this[int index]{ 
         get 
         {
-            if (Count<index)
+            if (Count <= index)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -41,7 +41,7 @@ public class MyList<T>:IEnumerable<T>
         }
         set
         {
-            if (Count < index)
+            if (Count <= index)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -99,5 +99,60 @@ public class MyList<T>:IEnumerable<T>
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
+    }
+
+    public void Clear()
+    {
+        Array.Clear(array, 0, Count);
+    }
+
+    public void Reverrse()
+    {
+       
+        for (int i = 0; i < Count/2; i++)
+        {
+            if (Count==0)
+            {
+                throw new Exception();
+            }                            //1,2,3,4
+            if (Count>1)
+            {
+                T temp = array[i];
+                array[i] = array[Count - i - 1];
+                array[Count - i - 1] = temp;
+            }
+            if(Count==1)
+            {
+                Console.WriteLine(array[0]);
+            }
+        }
+    }
+
+    public void Sort()
+    {
+        if (Count == 0)
+        {
+            throw new Exception();
+        }                            //1,2,3,4
+        if (Count > 1)
+        {
+            //for (int i = 0; i < Count; i++)
+            //{
+            //    for (int j = i + 1; j < Count; j++)
+            //    {
+            //        if (array.Equals(array[i] > array[j]))
+            //        {
+            //            T temp = array[i];
+            //            array[i] = array[j];
+            //            array[j] = temp;
+            //        }
+            //    }
+            //}
+             Array.Sort(array, 0, Count);
+        }
+        if (Count == 1)
+        {
+            Console.WriteLine(array[0]);
+        }
     }
 }
