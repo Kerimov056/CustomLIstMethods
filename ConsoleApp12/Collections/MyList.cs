@@ -91,7 +91,10 @@ public class MyList<T>:IEnumerable<T>
 
     public void Clear()
     {
-        Array.Clear(array, 0, Count);
+        _capacity = 0;
+        Count = 0;
+        array = null;
+        //Array.Clear(array, 0, Count);
     }
 
     public void Reverrse()
@@ -165,11 +168,25 @@ public class MyList<T>:IEnumerable<T>
 
     public bool Remove(T obj)
     {
-        for (int i = 0; i < Count; i++)
+        for (int i = 0; i < Count; i++)              //yarimciq qalib
         {
             if (obj.Equals(array[i]))
             {
-                array[i] = default;
+               // RemoveAt(array[i]);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool Exists(Predicate<T> predicate)
+    {
+        //Contient(predicate);
+
+        foreach (var item in array)    //yarimicq
+        {
+            if (predicate(item))
+            {
                 return true;
             }
         }
