@@ -93,7 +93,7 @@ public class MyList<T>:IEnumerable<T>
     {
         _capacity = 0;
         Count = 0;
-        array = null;
+        array = default;
         //Array.Clear(array, 0, Count);
     }
 
@@ -154,6 +154,25 @@ public class MyList<T>:IEnumerable<T>
         }
     }
 
+
+    public int IndexOf(T obj, int index,int count)  //3ci ovolad'i
+    {
+        if (count<Count)
+        {
+           for (int i = 0; i < count; i++)
+           {
+             if (obj.Equals(array[i]) && i == index)
+             {
+                return 1;
+             }
+           }
+        }
+        else
+        {
+            throw new ArgumentNullException();
+        }
+        return -1;
+    }
     public int IndexOf(T obj, int index)  //2ci ovolad'i
     {
         for (int i = 0; i < Count; i++)
@@ -165,8 +184,19 @@ public class MyList<T>:IEnumerable<T>
         }
         return -1;
     }
+    public int IndexOf(T obj)  //1ci ovolad'i
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            if (obj.Equals(array[i]))
+            {
+                return 1;
+            }
+        }
+        return -1;
+    }
 
-    public bool Remove(T obj)
+    public bool Remove(T obj) 
     {
         for (int i = 0; i < Count; i++)             
         {
