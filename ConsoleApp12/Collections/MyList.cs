@@ -168,22 +168,42 @@ public class MyList<T>:IEnumerable<T>
 
     public bool Remove(T obj)
     {
-        for (int i = 0; i < Count; i++)              //yarimciq qalib
+        for (int i = 0; i < Count; i++)             
         {
             if (obj.Equals(array[i]))
             {
-               // RemoveAt(array[i]);
+                array[i] = default;
+                if (i == array.Length - 1)
+                {
+                    Count--;
+                    Array.Resize(ref array,Count);
+                    return true;
+                }
+                var temp = array;
+                T[] newArray= new T[Count-1];
+                int c = 0;
+                for (int j = 0; j < Count; j++)
+                {
+                    if (i==j)
+                    {
+                        continue;
+                    }
+                    newArray[c] =array[j];
+                    c++;
+                }
+                array = newArray;
+                Count--;
                 return true;
             }
         }
+        Console.WriteLine("Not Value!");
         return false;
     }
 
     public bool Exists(Predicate<T> predicate)
     {
-        //Contient(predicate);
 
-        foreach (var item in array)    //yarimicq
+        foreach (var item in array)   
         {
             if (predicate(item))
             {
